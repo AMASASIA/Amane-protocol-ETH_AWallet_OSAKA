@@ -202,8 +202,8 @@ Thonny IDE: Interactive MicroPython REPL and debugging suite.
 
 Adafruit ampy (ampy): CLI tool for flashing scripts (main.py) directly over the serial interface (COM3).
 
-🌊　　　🌊　　　🌊
 
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 
 DEMO: Operational Flow & Visual Feedback
 1. Power On / Boot
