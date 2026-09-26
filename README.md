@@ -59,7 +59,29 @@ Live API: https://awallet-service-291872969988.us-central1.run.app/balance
 [![Credential](https://img.shields.io/badge/EIP--5114-Soulbound%20Tokens%20%28SBT%29-orange.svg)](https://eips.ethereum.org/EIPS/eip-5114)
 [![AI Orchestration](https://img.shields.io/badge/Tive%20◉AI-Gemini%20Liaison%20Engine-black.svg)](#tive-ai-automated-portfolio-management-system)
 
-**A\Wallet** is an enterprise-grade, identity-native smart wallet operating system designed for the EVM ecosystem (anchored on Base). It bridges on-chain account abstraction (**ERC-4337**), self-sovereign identity (**DID** & **Soulbound Tokens**), hardware-attested biometric authorization (**Pico W / WebAuthn**), and deterministic policy automation with **Tive ◉AI**—an invisible finance orchestration layer for automated, risk-gated portfolio management.
+**AWallet** is an enterprise-grade, identity-native smart wallet operating system designed for the EVM ecosystem (anchored on Base). It bridges on-chain account abstraction (**ERC-4337**), self-sovereign identity (**DID** & **Soulbound Tokens**), hardware-attested biometric authorization (**Pico W / WebAuthn**), and deterministic policy automation with **Tive ◉AI**—an invisible finance orchestration layer for automated, risk-gated portfolio management.
+
+^[ Raspberry Pi Pico W ]^^
+
+Edge Hardware^^Physical button pressed^^^
+
+│^│ HTTPS POST (Wi-Fi)^▼^^
+
+^[ GitHub Actions: trigger-a2a.yml ]^^
+
+Automation Workflow^^Repository event triggered^^^
+
+│^│ Webhook Dispatch^▼^^
+
+^[ ㉀ Matsuri Button ]⛩ ｜ Tive◉AI Liaison Model^^
+
+Vercel Serverless (/api/liaison)^^^1. Gasless Execution: ERC-4337 AWallet via Pimlico^^2. Resource Acquisition: Native HTTP 402 (x402 rail)^^3. Settlement: Matsuri JPY transfer ^& swap^^^^
+
+│^│ Complete^▼^^
+
+^[ A2A Settlement Complete ]^^
+
+On-Chain Finality^^Proof generated on Base Sepolia^^^^^ > pipeline.html"
 
 ---
 
