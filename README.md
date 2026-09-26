@@ -1,5 +1,58 @@
 # AWallet — Identity-Native Smart Wallet Operating System
 
+
+┌─────────────────────────────────────────────────────────────┐
+│                      HUMAN LAYER                            │
+│         Anchor ID (Sovereign Passkey / WebAuthn)            │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Holds & Controls (Root Custody)
+┌──────────────────────────────▼──────────────────────────────┐
+│           SOVEREIGN TRIADIC IDENTITY LAYER                  │
+│             SBT (Non-Transferable Identity)                 │
+│             Metadata: subjectType="AgenticAI"               │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ ERC-6551 Bound (Deterministic)
+┌──────────────────────────────▼──────────────────────────────┐
+│             EXECUTION & ACCOUNT LAYER (TBA)                 │
+│         AWallet (ERC-4337 Smart Contract Account)           │
+│        Operational Execution Rights (Key-Separated)         │
+└──────────────┬──────────────────────────────┬───────────────┘
+               │                              │
+     Pimlico Paymaster               1inch Fusion Resolvers
+ (Gasless UserOperations)            (Off-Chain Intent Swaps)
+               │                              │
+               ▼                              ▼
+┌──────────────────────────────┐┌─────────────────────────────┐
+│  x402 Micro-Settlement Rail  ││ Zero-Gas Asset Conversion   │
+│  - Paid API Invocations      ││ - Arbitrary Tokens -> JPY   │
+│  - M2M Data / Agent Market   ││ - Automated Yield Routing   │
+└──────────────────────────────┘└─────────────────────────────┘
+
+Engineering Specification
+1. Deterministic Identity Pipeline (AtomicMint.sol)
+Single-Transaction Provisioning: Concurrently mints the non-transferable Soulbound Token (SBT) to the user's Anchor ID and deploys its corresponding ERC-6551 Token Bound Account (TBA).
+
+Cryptographic Attestation: Imprints immutable provenance metadata (agentURI, modelHash, operationalLimits) directly into the smart contract state.
+
+2. Key Decoupling & Bounded Execution
+Execution Separation: The Agentic AI runtime holds session-scoped execution keys capable of signing UserOperations via ERC-4337, completely isolated from the Anchor ID's root private key.
+
+Emergency Circuit Breakers: The Anchor ID retains unilateral root authority to revoke session keys, rebind the TBA, or pause automated execution via ERC-6551 ownership controls.
+
+3. Financial Execution & Micro-Settlements (Tive◉AI Engine)
+Native x402 Rail: Agents autonomously negotiate web resources by interpreting HTTP 402 Payment Required headers, fulfilling micro-invoices instantly via sponsored UserOps without human intervention.
+
+[0] Zero-Gas Intent Flow: Eliminates the necessity for agents to hold native ETH for gas. Tasks rewarded in diverse ERC-20 tokens are settled through 1inch Fusion’s off-chain resolver auction into compliant stablecoins (e.g., Matsuri JPY).
+
+Autonomous Profit Routing: Pre-programmed settlement contracts automatically stream realized agent revenue from the TBA back to the human deployer's primary AI wallet.
+
+
+Proof of Concept Links:
+
+BaseScan: https://sepolia.basescan.org/tx/0x0c53100a1d8615227baec17737313444f3ed0dfb0b77ec4d22a333aaede3d7f7
+
+Live API: https://awallet-service-291872969988.us-central1.run.app/balance
+
 [![Network](https://img.shields.io/badge/Network-Base%20%7C%20EVM-blue.svg)](https://base.org)
 [![Account Abstraction](https://img.shields.io/badge/ERC--4337-Account%20Abstraction-blueviolet.svg)](https://eips.ethereum.org/EIPS/eip-4337)
 [![Identity](https://img.shields.io/badge/W3C-Decentralized%20Identifier%20%28DID%29-green.svg)](https://www.w3.org/TR/did-core/)
