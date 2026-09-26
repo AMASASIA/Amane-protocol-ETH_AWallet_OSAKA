@@ -1,4 +1,4 @@
-# A\Wallet — Identity-Native Smart Wallet Operating System
+# AWallet — Identity-Native Smart Wallet Operating System
 
 [![Network](https://img.shields.io/badge/Network-Base%20%7C%20EVM-blue.svg)](https://base.org)
 [![Account Abstraction](https://img.shields.io/badge/ERC--4337-Account%20Abstraction-blueviolet.svg)](https://eips.ethereum.org/EIPS/eip-4337)
