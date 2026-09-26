@@ -61,6 +61,10 @@ Live API: https://awallet-service-291872969988.us-central1.run.app/balance
 
 **AWallet** is an enterprise-grade, identity-native smart wallet operating system designed for the EVM ecosystem (anchored on Base). It bridges on-chain account abstraction (**ERC-4337**), self-sovereign identity (**DID** & **Soulbound Tokens**), hardware-attested biometric authorization (**Pico W / WebAuthn**), and deterministic policy automation with **Tive ◉AI**—an invisible finance orchestration layer for automated, risk-gated portfolio management.
 
+
+
+
+
 %%{init: {'theme': 'base', 'themeVariables': { 'darkMode': true, 'background': '#000000', 'mainBkg': '#0d1117', 'lineColor': '#ffffff', 'primaryTextColor': '#ffffff', 'edgeLabelBackground':'#161b22'}}}%%
 flowchart TD
     classDef edgeBox fill:#050505,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-family:monospace
@@ -68,7 +72,93 @@ flowchart TD
     classDef coreBox fill:#160b11,stroke:#f43f5e,stroke-width:3px,color:#ffffff,font-family:monospace
     classDef doneBox fill:#051a0e,stroke:#22c55e,stroke-width:2px,color:#ffffff,font-family:monospace
 
-    A["**[ ⚡ Raspberry Pi Pico W ]**
+   <svg viewBox="0 0 680 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="680" height="720" fill="#000000" rx="16" />
+  <rect width="678" height="718" x="1" y="1" fill="none" stroke="#262626" stroke-width="2" rx="16" />
+
+  <!-- Step 1: Hardware -->
+  <g transform="translate(90, 40)" filter="url(#shadow)">
+    <rect width="500" height="90" rx="10" fill="#0c0d12" stroke="#ffffff" stroke-width="1.8" />
+    <text x="24" y="32" fill="#888888" font-size="11" font-family="monospace">EDGE HARDWARE</text>
+    <text x="24" y="56" fill="#ffffff" font-size="16" font-family="-apple-system, monospace" font-weight="bold">[ ⚡ Raspberry Pi Pico W ]</text>
+    <text x="24" y="76" fill="#aaaaaa" font-size="13" font-family="-apple-system, sans-serif">Physical button pressed</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(340, 130)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#888888" stroke-width="2" stroke-dasharray="4" />
+    <polygon points="-5,40 5,40 0,48" fill="#888888" />
+    <rect x="-85" y="12" width="170" height="20" rx="4" fill="#000000" stroke="#333333" />
+    <text x="0" y="26" fill="#cccccc" font-size="11" font-family="monospace" text-anchor="middle">HTTPS POST (Wi-Fi)</text>
+  </g>
+
+  <!-- Step 2: Automation -->
+  <g transform="translate(90, 180)" filter="url(#shadow)">
+    <rect width="500" height="90" rx="10" fill="#0c0d12" stroke="#ffffff" stroke-width="1.8" />
+    <text x="24" y="32" fill="#888888" font-size="11" font-family="monospace">AUTOMATION WORKFLOW</text>
+    <text x="24" y="56" fill="#ffffff" font-size="16" font-family="-apple-system, monospace" font-weight="bold">[ ⚙️ GitHub Actions: trigger-a2a.yml ]</text>
+    <text x="24" y="76" fill="#aaaaaa" font-size="13" font-family="-apple-system, sans-serif">Repository event dispatched autonomously</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(340, 270)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#888888" stroke-width="2" stroke-dasharray="4" />
+    <polygon points="-5,40 5,40 0,48" fill="#888888" />
+    <rect x="-70" y="12" width="140" height="20" rx="4" fill="#000000" stroke="#333333" />
+    <text x="0" y="26" fill="#cccccc" font-size="11" font-family="monospace" text-anchor="middle">Webhook Dispatch</text>
+  </g>
+
+  <!-- Step 3: Core Liaison & Matsuri -->
+  <g transform="translate(90, 320)" filter="url(#shadow)">
+    <rect width="500" height="180" rx="12" fill="#0f0913" stroke="url(#glow)" stroke-width="2.5" />
+    <text x="24" y="32" fill="#f43f5e" font-size="11" font-family="monospace" font-weight="bold">VERCEL SERVERLESS (/api/liaison)</text>
+    <text x="24" y="60" fill="#ffffff" font-size="17" font-family="-apple-system, monospace" font-weight="bold">[ 🏮 Matsuri Button ] ⛩ ｜ Tive◉AI Liaison Model</text>
+    
+    <line x1="24" y1="75" x2="476" y2="75" stroke="#262626" stroke-width="1" />
+
+    <text x="32" y="100" fill="#e2e8f0" font-size="13" font-family="-apple-system, monospace">1. Gasless Execution: ERC-4337 AWallet (via Pimlico)</text>
+    <text x="32" y="125" fill="#e2e8f0" font-size="13" font-family="-apple-system, monospace">2. Resource Acquisition: Native HTTP 402 (x402 rail)</text>
+    <text x="32" y="150" fill="#e2e8f0" font-size="13" font-family="-apple-system, monospace">3. Settlement: Matsuri JPY Transfer & Fusion Swap</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(340, 500)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#22c55e" stroke-width="2" />
+    <polygon points="-5,40 5,40 0,48" fill="#22c55e" />
+    <rect x="-60" y="12" width="120" height="20" rx="4" fill="#000000" stroke="#14532d" />
+    <text x="0" y="26" fill="#4ade80" font-size="11" font-family="monospace" text-anchor="middle">Execution Proof</text>
+  </g>
+
+  <!-- Step 4: Finality -->
+  <g transform="translate(90, 550)" filter="url(#shadow)">
+    <rect width="500" height="90" rx="10" fill="#06130b" stroke="#22c55e" stroke-width="2" />
+    <text x="24" y="32" fill="#4ade80" font-size="11" font-family="monospace">ON-CHAIN FINALITY</text>
+    <text x="24" y="56" fill="#ffffff" font-size="16" font-family="-apple-system, monospace" font-weight="bold">[ 🟢 A2A Settlement Complete ]</text>
+    <text x="24" y="76" fill="#86efac" font-size="13" font-family="-apple-system, monospace">Base Sepolia Tx Proof: 0x0c53100a...33aaede3d7f7</text>
+  </g>
+</svg>
+
+    
+
+
+
+
+
+
+
+
+
 ---
 
 ## 📑 Table of Contents
