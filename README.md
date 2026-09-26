@@ -1,11 +1,10 @@
 # AWallet — Identity-Native AI Wallet Operating System
 
-
-┌─────────────────────────────────────────────────────────────┐
+<html><head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">┌─────────────────────────────────────────────────────────────┐
 │                      HUMAN LAYER                            │
 │         Anchor ID (Sovereign Passkey / WebAuthn)            │
 └──────────────────────────────┬──────────────────────────────┘
-                               │ Holds & Controls (Root Custody)
+                               │ Holds &amp; Controls (Root Custody)
 ┌──────────────────────────────▼──────────────────────────────┐
 │           SOVEREIGN TRIADIC IDENTITY LAYER                  │
 │             SBT (Non-Transferable Identity)                 │
@@ -13,7 +12,7 @@
 └──────────────────────────────┬──────────────────────────────┘
                                │ ERC-6551 Bound (Deterministic)
 ┌──────────────────────────────▼──────────────────────────────┐
-│             EXECUTION & ACCOUNT LAYER (TBA)                 │
+│             EXECUTION &amp; ACCOUNT LAYER (TBA)                 │
 │         AWallet (ERC-4337 Smart Contract Account)           │
 │        Operational Execution Rights (Key-Separated)         │
 └──────────────┬──────────────────────────────┬───────────────┘
@@ -24,9 +23,10 @@
                ▼                              ▼
 ┌──────────────────────────────┐┌─────────────────────────────┐
 │  x402 Micro-Settlement Rail  ││ Zero-Gas Asset Conversion   │
-│  - Paid API Invocations      ││ - Arbitrary Tokens -> JPY   │
+│  - Paid API Invocations      ││ - Arbitrary Tokens -&gt; JPY   │
 │  - M2M Data / Agent Market   ││ - Automated Yield Routing   │
-└──────────────────────────────┘└─────────────────────────────┘
+└──────────────────────────────┘└─────────────────────────────┘</pre></body></html>
+
 
 Engineering Specification
 1. Deterministic Identity Pipeline (AtomicMint.sol)
