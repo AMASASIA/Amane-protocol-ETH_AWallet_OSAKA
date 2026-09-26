@@ -61,6 +61,29 @@ Live API: https://awallet-service-291872969988.us-central1.run.app/balance
 
 **AWallet** is an enterprise-grade, identity-native smart wallet operating system designed for the EVM ecosystem (anchored on Base). It bridges on-chain account abstraction (**ERC-4337**), self-sovereign identity (**DID** & **Soulbound Tokens**), hardware-attested biometric authorization (**Pico W / WebAuthn**), and deterministic policy automation with **Tive ◉AI**—an invisible finance orchestration layer for automated, risk-gated portfolio management.
 
+The AWallet cloud service powered by the Liaison Model (tive-ai) for Amane Protocol is now live in production.
+Verification Results
+Infrastructure: Google Cloud Run (us-central1)
+Service URL: https://awallet-service-291872969988.us-central1.run.app
+Smart Account: 0x9136c38A4C49C14a1a5EA73796054E1C6be7aB73
+Balance Query (/balance): Responded successfully (ETH: 0 / USDC: 0.00)
+Gasless Execution (/execute): SUCCESS
+Transaction Hash: 0xc1fa9af29a76eb295f10b1c66b1059c65d6403ddd2ddce9e9efbe8ccb7b30f1e
+BaseScan URL: https://sepolia.basescan.org/tx/0xc1fa9af29a76eb295f10b1c66b1059c65d6403ddd2ddce9e9efbe8ccb7b30f1e
+The dependency tree has been streamlined down to 108 packages with zero vulnerabilities by eliminating all redundant modules. The end-to-end pipeline—from Google Cloud Run to submitting gasless UserOps on Base Sepolia via Pimlico Paymaster—is fully operational.
+
+
+
+Amane Protocol の Liaison Model（tive-ai）による AWallet クラウドサービスが本番稼働しました。
+検証結果
+サービス基盤: Google Cloud Run (us-central1)
+サービス URL: [https://awallet-service-291872969988.us-central1.run.app](https://awallet-service-291872969988.us-central1.run.app)
+スマートアカウント: 0x9136c38A4C49C14a1a5EA73796054E1C6be7aB73
+残高照会 (/balance): 正常応答（ETH: 0 / USDC: 0.00）
+ガスレス実行 (/execute): SUCCESS
+Transaction Hash: 0xc1fa9af29a76eb295f10b1c66b1059c65d6403ddd2ddce9e9efbe8ccb7b30f1e
+BaseScan URL: 0xc1fa9af29a76eb295f10b1c66b1059c65d6403ddd2ddce9e9efbe8ccb7b30f1e
+依存パッケージは不要なモジュールを完全に削ぎ落とした108個・脆弱性0件の構成で、Cloud Run 上から Base Sepolia への Pimlico Paymaster 経由ガスレス UserOp 発行までが一気通貫で確立されています。
 
 
 
