@@ -63,9 +63,10 @@ Live API: https://awallet-service-291872969988.us-central1.run.app/balance
 
 
 
-GitHub の `README.md` にそのまま貼るテキストです。外側のバッククォートなどの余計なものは一切含んでいません。下の枠の中身をすべてコピーして、GitHub の編集画面にそのまま貼り付けてください。
+
 
 | | EDGE HARDWARE<br>
+
 
 <br>**[ ⚡ Raspberry Pi Pico W ]**<br>
 
@@ -91,6 +92,7 @@ Webhook Dispatch
 
 ▼<br>| VERCEL SERVERLESS (/api/liaison)
 
+
 **[ 🏮 Matsuri Button ] ⛩ ｜ Tive◉AI Liaison Model**<br>---
 
 <br>• **1. Gasless:** ERC-4337 AWallet (via Pimlico)<br>
@@ -107,6 +109,7 @@ Execution Proof
 
 ▼<br>| ON-CHAIN FINALITY<br>
 
+
 <br>**[ 🟢 A2A Settlement Complete ]**<br>
 
 <br>Base Sepolia Tx Proof: 0x0c53100a...33aaede3d7f7 |
@@ -115,6 +118,9 @@ Execution Proof
 
  |
 | --- |
+
+
+
 
 
 
