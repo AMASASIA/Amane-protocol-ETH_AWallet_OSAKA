@@ -73,7 +73,7 @@ Automation Workflow^^Repository event triggered^^^
 
 │^│ Webhook Dispatch^▼^^
 
-^[ ㉀ Matsuri Button ]⛩ ｜ Tive◉AI Liaison Model^^
+^[ 🏮 Matsuri Button ]⛩ ｜ Tive◉AI Liaison Model^^
 
 Vercel Serverless (/api/liaison)^^^1. Gasless Execution: ERC-4337 AWallet via Pimlico^^2. Resource Acquisition: Native HTTP 402 (x402 rail)^^3. Settlement: Matsuri JPY transfer ^& swap^^^^
 
