@@ -1,0 +1,228 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and wallet identity information",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "User Google account email"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User avatar URL"
+        },
+        "walletAddress": {
+          "type": "string",
+          "description": "Primary Base EVM Smart Wallet Address"
+        },
+        "baseName": {
+          "type": "string",
+          "description": "Registered Basename"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Server timestamp of creation"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Server timestamp of last update"
+        }
+      },
+      "required": ["userId", "email"]
+    },
+    "InvisibleAction": {
+      "title": "InvisibleAction",
+      "description": "Autonomous financial proposal managed by Tive ◉AI and Policy Engine",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Action unique identifier"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner user UID"
+        },
+        "tier": {
+          "type": "integer",
+          "description": "Policy Engine tier level (1 to 5)"
+        },
+        "desc": {
+          "type": "string",
+          "description": "Proposal description in Japanese"
+        },
+        "descEn": {
+          "type": "string",
+          "description": "Proposal description in English"
+        },
+        "amount": {
+          "type": "string",
+          "description": "Formatted amount string"
+        },
+        "amountLabel": {
+          "type": "string",
+          "description": "Detailed amount label with fiat and crypto value"
+        },
+        "destination": {
+          "type": "string",
+          "description": "Recipient address or registered entity name"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Specific intent extracted strictly from user speech"
+        },
+        "reasonEn": {
+          "type": "string",
+          "description": "Intent in English"
+        },
+        "whyApprovalNeeded": {
+          "type": "string",
+          "description": "Explanation of policy requirement"
+        },
+        "whyApprovalNeededEn": {
+          "type": "string",
+          "description": "Explanation in English"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["awaiting", "approved_app", "approved_tap", "auto_approved", "cancelled"],
+          "description": "Execution status"
+        },
+        "category": {
+          "type": "string",
+          "description": "Action category"
+        },
+        "initiatedBy": {
+          "type": "string",
+          "description": "Initiator agent or service"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of creation"
+        }
+      },
+      "required": ["id", "userId", "tier", "amount", "status"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Multi-turn chat interaction with Tive ◉AI",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Message ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Sender user UID"
+        },
+        "sender": {
+          "type": "string",
+          "enum": ["user", "assistant"],
+          "description": "Message sender"
+        },
+        "content": {
+          "type": "string",
+          "description": "Message text body"
+        },
+        "model": {
+          "type": "string",
+          "description": "Gemini model used"
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": ["id", "userId", "sender", "content"]
+    },
+    "UserOperation": {
+      "title": "UserOperation",
+      "description": "On-chain ERC-4337 UserOperation and gasless transaction logs",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique transaction record identifier"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID"
+        },
+        "txHash": {
+          "type": "string",
+          "description": "Base on-chain transaction hash"
+        },
+        "userOpHash": {
+          "type": "string",
+          "description": "Pimlico ERC-4337 UserOperation hash"
+        },
+        "sender": {
+          "type": "string",
+          "description": "Sender Smart Account address"
+        },
+        "to": {
+          "type": "string",
+          "description": "Recipient address or contract address"
+        },
+        "amount": {
+          "type": "string",
+          "description": "Transferred amount"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Asset symbol (ETH, USDC, etc.)"
+        },
+        "chainId": {
+          "type": "integer",
+          "description": "Network chain ID (84532 or 8453)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Transaction confirmation status"
+        },
+        "gasSponsored": {
+          "type": "boolean",
+          "description": "Whether gas was sponsored by Pimlico Paymaster"
+        },
+        "explorerUrl": {
+          "type": "string",
+          "description": "Basescan verification link"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of execution"
+        }
+      },
+      "required": ["id", "userId", "txHash", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Individual user profile records"
+    },
+    "/users/{userId}/actions/{actionId}": {
+      "schema": { "$ref": "#/entities/InvisibleAction" },
+      "description": "Financial proposals and actions per user"
+    },
+    "/users/{userId}/chats/{chatId}": {
+      "schema": { "$ref": "#/entities/ChatMessage" },
+      "description": "Conversational memory and history with Tive ◉AI"
+    },
+    "/users/{userId}/transactions/{txId}": {
+      "schema": { "$ref": "#/entities/UserOperation" },
+      "description": "On-chain ERC-4337 UserOperation and transaction logs"
+    }
+  }
+}
