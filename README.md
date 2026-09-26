@@ -1,4 +1,4 @@
-# AWallet — Identity-Native Smart Wallet Operating System
+# AWallet — Identity-Native AI Wallet Operating System
 
 
 ┌─────────────────────────────────────────────────────────────┐
