@@ -64,7 +64,6 @@ Live API: https://awallet-service-291872969988.us-central1.run.app/balance
 
 
 
-
 | | EDGE HARDWARE<br>
 
 
@@ -117,8 +116,8 @@ Execution Proof
 
 
  |
+ 
 | --- |
-
 
 
 
