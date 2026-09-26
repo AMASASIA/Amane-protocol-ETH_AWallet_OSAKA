@@ -141,9 +141,92 @@ Execution Proof
  |
  
 | --- |
+ＨＡＲＤＷＡＲＥ [🏮]　祭 🎌MATSURI 🗻 Button
+Core Resources & Tech Stack Overview (Remix 天音 Amane /祭 Matsuri Button)
+1. Blockchain & Web3 Infrastructure
+@curvegrid/multibaas-sdk (Curvegrid MultiBaas SDK)
+
+Role: Blockchain integration & smart contract management middleware.
+
+Purpose: Replaces raw Web3 RPC handling and manual private key management with secure, high-speed REST APIs to interact with smart contracts (ERC-4337 accounts, token transfers, and event monitoring).
+
+ERC-4337 (Account Abstraction) & Paymaster
+
+Role: Smart account foundation.
+
+Purpose: Enables gasless stablecoin (e.g., USDC) micro-settlements, multisig verification, and social recovery with zero native token (ETH) gas friction.
+
+2. Hardware & Edge Layer
+Raspberry Pi Pico W (RP2040 + CYW43439)
+
+Role: Physical settlement trigger terminal ("Matsuri Switch").
+
+Purpose: Detects tactile button presses via Pin 20 (GPIO 15) and Pin 18 (GND), delivers visual status cues via the onboard green LED, and communicates securely over Wi-Fi.
+
+MicroPython
+
+Role: Embedded runtime environment.
+
+Purpose: Drives the standalone, auto-booting firmware utilizing network, urequests, and machine.Pin.
+
+3. Protocol & Liaison Layer
+Amane Protocol
+
+Role: Unified foundational protocol.
+
+Purpose: Orchestrates state management and communication across physical devices, Decentralized Identifiers (DIDs), and smart accounts.
+
+Liaison Model (tive-ai)
+
+Role: Autonomous automation model within the Amane Protocol.
+
+Purpose: Ingests the hardware trigger payload (MATSURI_PAYMENT_TRIGGER) and automatically relays/assembles the on-chain settlement transaction.
+
+Vercel
+
+Role: Cloud hosting and serverless API execution environment (awallet-eth-tokyo.vercel.app).
+
+Purpose: Delivers the frontend SPA and routes incoming edge API requests.
+
+4. Client & Tooling
+Remix AWallet (React / Vite SPA)
+
+Role: Front-end wallet dashboard and interface.
+
+Purpose: Displays real-time DID status, account balances, and transaction settlement verifications.
+
+Development & Flashing Tooling
+
+Thonny IDE: Interactive MicroPython REPL and debugging suite.
+
+Adafruit ampy (ampy): CLI tool for flashing scripts (main.py) directly over the serial interface (COM3).
+
+🌊　　　🌊　　　🌊
 
 
+DEMO: Operational Flow & Visual Feedback
+1. Power On / Boot
 
+The LED flashes rapidly 5 times to indicate system startup.
+
+2. Wi-Fi Searching & Handshake
+
+Keep the "Allow Others to Join" screen open on the iPhone hotspot ("iPhone (2)").
+
+The LED blinks slowly while searching and establishing the wireless connection.
+
+3. Connection Established (Standby Mode)
+
+The green LED turns solid ON (stays lit), confirming the device is online and ready.
+
+4. Triggering the "Matsuri" Hardware Payment
+
+Click the tactile switch once.
+
+LED Status Transition:
+The LED turns OFF briefly ➔ Flashes 3 times (Success signal) ➔ Returns to solid ON.
+
+This visual LED confirmation verifies that the HTTP GET request reached the endpoint with Status: 200 OK, successfully completing the Amane Protocol hardware settlement trigger.
 
 
 ## 📑 Table of Contents
