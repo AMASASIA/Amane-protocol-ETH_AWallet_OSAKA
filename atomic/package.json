@@ -1,0 +1,32 @@
+{
+  "name": "awallet-atomic-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AWallet Atomic issuance demo (NFT + SBT + ERC-6551 TBA) on Base Sepolia",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:server": "node --test \"server/test/*.test.mjs\"",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "server": "node server/index.mjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "2.1.0",
+    "@nomicfoundation/hardhat-ethers": "3.1.3",
+    "@nomicfoundation/hardhat-network-helpers": "1.1.2",
+    "@nomicfoundation/hardhat-verify": "2.1.3",
+    "chai": "4.5.0",
+    "ethers": "6.15.0",
+    "hardhat": "2.29.1",
+    "solc": "0.8.24"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.1.0",
+    "@simplewebauthn/server": "13.2.2",
+    "dotenv": "16.6.1",
+    "express": "4.21.2",
+    "permissionless": "0.2.57",
+    "viem": "2.38.0"
+  }
+}

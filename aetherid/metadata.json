@@ -1,0 +1,8 @@
+{
+  "name": "Remix AetherID: AI DID/SBT/TBA Sovereign Wallet",
+  "description": "Intuitive dashboard for managing, inspecting, and selectively sharing AI Decentralized Identifiers (DID), Soulbound Tokens (SBT), and Token Bound Accounts (TBA) with 3D cascading card deck and Google Workspace integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
