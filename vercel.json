@@ -1,17 +1,6 @@
 ﻿{
-  "cleanUrls": true,
   "rewrites": [
-    { "source": "/health", "destination": "/health" },
-    { "source": "/api/health", "destination": "/api/health" },
-    { "source": "/((?!health|api/health).*)", "destination": "/index.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(health|api/health)",
-      "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-      ]
-    }
+    { "source": "/health", "destination": "/health.json" },
+    { "source": "/api/health", "destination": "/health.json" }
   ]
 }
