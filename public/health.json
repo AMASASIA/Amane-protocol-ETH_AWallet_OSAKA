@@ -1,8 +1,1 @@
-﻿{
-  "status": "ok",
-  "protocol": "Amane Protocol",
-  "model": "Liaison Model (tive-ai)",
-  "network": "Base L2",
-  "chainId": 8453,
-  "timestamp": "2026-10-01T03:00:00Z"
-}
+﻿{"status":"ok","protocol":"Amane Protocol","model":"Liaison Model (tive-ai)","network":"Base L2","chainId":8453}
